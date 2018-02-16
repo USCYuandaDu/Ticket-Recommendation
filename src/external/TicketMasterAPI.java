@@ -143,7 +143,6 @@ public class TicketMasterAPI implements ExternalAPI {
 		}
 		return term;
 	}
-	@Override
 	public List<Item> search(double lat, double lon, String term) {
 		String url = "http://" + API_HOST + SEARCH_PATH;
 		String latlong = lat + "," + lon;
