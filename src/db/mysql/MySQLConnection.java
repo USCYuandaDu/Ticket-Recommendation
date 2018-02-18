@@ -223,5 +223,46 @@ public class MySQLConnection implements DBConnection {
 		}
 		return items;
 	}
+	@Override
+	public String getFullname(String userId) {
+		String name = "";
+		try {
+			if (conn == null) {
+				return "";
+			}
+			String sql = "SELECT first_name, last_name from users WHERE user_id = ?";
+			PreparedStatement statement = (PreparedStatement) conn.prepareStatement(sql);
+			statement.setString(1, userId);
+			ResultSet rs = statement.executeQuery();
+			if (rs.next()) {
+				name += String.join(" ", rs.getString("first_name"), rs.getString("last_name"));
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return name;
+	}
+	@Override
+	public boolean verifyLogin(String userId, String password) {
+		try {
+			if (conn == null) {
+				return false;
+			}
+
+			String sql = "SELECT user_id from users WHERE user_id = ? and password = ?";
+			PreparedStatement statement = (PreparedStatement) conn.prepareStatement(sql);
+			statement.setString(1, userId);
+			statement.setString(2, password);
+			ResultSet rs = statement.executeQuery();
+			if (rs.next()) {
+				return true;
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return false;
+	}
+
+
 
 }
