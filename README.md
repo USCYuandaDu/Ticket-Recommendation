@@ -33,3 +33,11 @@ Open this page:  http://www.oracle.com/technetwork/java/javase/downloads/jdk8-do
 3. Cacheable
 4. Client-Server
 5. Layered System
+# DataBase
+---
+Four tables in our MySql:
+1. users - store user information.
+2. items - store item information.
+3. history - store user favorite/purchase history (many-to-many).
+4. category - store item-category relationship (many-to-many).
+
