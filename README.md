@@ -2,14 +2,13 @@
 
 # Introduction
 
----
+
 
 This is a recommendation web engine for user to search the tickets, user can add likes for this item, based on their likes and geo location, in this way, users can get recommendations about which items to choose.
 
 Used J2EE, Tomcat, Eclipse to build the website, Used MySQL and MongoDB to store the data. And designed recommendation system based on Collaborative Filtering algorithm.
 
 # Installation
----
 
 1. Install Java 8 
 (It MUST BE at least Java 8, not Java 6, not Java 7)
@@ -20,7 +19,7 @@ Open this page:  http://www.oracle.com/technetwork/java/javase/downloads/jdk8-do
 5. Install MAMP
 
 # Rest
----
+
 REST stands for Representational State Transfer. It relies on a stateless, client-server, cacheable communications protocol -- and in virtually all cases, the HTTP protocol is used. Roy Fielding developed the REST architectural style in parallel with HTTP 1.1 of 1996–1999, based on the existing design of HTTP 1.0 of 1996.
 
 REST is an architecture style for designing networked applications. The idea is that, rather than using complex mechanisms such as CORBA, RPC or SOAP to connect between machines, simple HTTP is used to make calls between machines.
@@ -34,14 +33,14 @@ REST is an architecture style for designing networked applications. The idea is 
 4. Client-Server
 5. Layered System
 # DataBase
----
+
 Four tables in our MySql:
 1. users - store user information.
 2. items - store item information.
 3. history - store user favorite/purchase history (many-to-many).
 4. category - store item-category relationship (many-to-many).
 # Algorithm
----
+
 ## 1. Content-based Recommendation:
 Given item profiles (category, price, etc.) of your favorite, recommend items that are similar to what you liked before. 
 ## 2. Collaborative Filtering:
